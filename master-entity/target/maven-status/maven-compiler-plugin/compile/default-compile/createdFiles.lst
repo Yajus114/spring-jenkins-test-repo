@@ -1,0 +1,14 @@
+com\dawnbit\entity\master\User.class
+com\dawnbit\entity\master\PermissionGroupPermissions.class
+com\dawnbit\entity\master\User$UserBuilder.class
+com\dawnbit\entity\master\UserPermissionGroup.class
+com\dawnbit\entity\master\PermissionGroup.class
+com\dawnbit\entity\master\CommonNum.class
+com\dawnbit\entity\master\common\utils\CommonUtils.class
+com\dawnbit\entity\master\OrganisationMaster.class
+com\dawnbit\entity\master\Region.class
+com\dawnbit\entity\master\Country.class
+com\dawnbit\entity\master\UserDetails.class
+com\dawnbit\entity\master\OrganisationUserNum.class
+com\dawnbit\entity\master\Permission.class
+com\dawnbit\entity\master\IP.class
