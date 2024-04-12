@@ -1,0 +1,59 @@
+spring:
+  #set application details
+  application:
+    name: staff-management-gateway
+  jmx:
+    default-domain: ${spring.application.name}
+  main:
+    allow-bean-definition-overriding: true
+  aop:
+    proxy-target-class: true
+
+server:
+  #  port: 80
+  servlet:
+    context-path: /${spring.application.name}
+  error:
+    # Disable Spring Boot's "Whitelabel" default error page, so we can use our own
+    whitelabel:
+      enabled: false
+
+#set zuul details 
+zuul:
+  ignored-headers: Access-Control-Max-Age, Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers
+  sensitive-headers:
+  ribbonIsolationStrategy: THREAD
+  host:
+    connect-timeout-millis: 5000000
+    socket-timeout-millis: 5000000
+#  semaphore:
+#    max-semaphores: 2000  
+# set hystrix details      
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+        isolation:
+          #          strategy: THREAD
+          timeout-in-milliseconds: 60000000
+    circuitBreaker:
+      sleepWindowInMilliseconds: 10000
+  threadpool:
+    default:
+      coreSize: 100
+
+
+# set ribbon details
+ribbon:
+  eureka:
+    enabled: true
+  MaxHttpConnectionsPerHost: 200
+  OkToRetryOnAllOperations: true
+  ConnectTimout: 5000000
+  ReadTimeout: 5000000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  retryableStatusCodes: 500
+  ServerListRefreshInterval: 2000

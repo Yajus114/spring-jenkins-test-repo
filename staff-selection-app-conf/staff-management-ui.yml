@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: staff-management-ui-service
+  jmx:
+    default-domain: ${spring.application.name}
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8085
+  servlet:
+    context-path: /${spring.application.name}

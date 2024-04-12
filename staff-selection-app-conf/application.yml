@@ -1,0 +1,47 @@
+### MULTIPART (MultipartProperties)
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-request-size: 75MB
+      max-file-size: 50MB
+      file-size-threshold: 2KB
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+server:
+  max-http-header-size: 9999999
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css,image/jpeg
+
+security:
+  basic:
+    enabled: true
+    client-id: appServices
+    client-secret: appServices@2024
+    grant_type: password
+  signing-key:
+    public-store-path: public.txt
+  url:
+    ignored: /noauth/**,/deleteToken,/api/noauth/**,/images/**,/actuator/**,/login**,/downloadFile/**,/api/message/findAllMessageList,/attachments/**,/reports/**,/uploadFileWithLocation/**,/deleteFileList/**,/api/onlineMeeting/callback/**,/**/websocket,/dawnbit/**,/send,/sendPayloadToManyTopics,/sendPayloadsToTopics
+
+upload:
+  document:
+    path: "/data/attachments"
+
+## File Storage Properties
+#file:
+#  upload-dir: /data/staffmanagement/storage
+#  public-domain: http://staff-management.dawnbit.com/master-service
+#  upload-doc-dir: /data/staffmanagement/storage
+
+#websocket:
+#  enpoint: /dawnbit

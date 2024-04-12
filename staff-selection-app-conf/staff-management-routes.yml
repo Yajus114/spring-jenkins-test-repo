@@ -1,0 +1,12 @@
+#set zuul routes for all the micro services
+zuul:
+  routes:
+    #auth-service:
+    #   path: /auth-server/**
+    #   url: http://localhost:8080/staff-management-auth-server/
+    master-service:
+      path: /master-service/**
+      url: http://localhost:8080/staff-management-master-service/
+    ui-service:
+      path: /**
+      url: http://localhost:8080/staff-management-ui-service/

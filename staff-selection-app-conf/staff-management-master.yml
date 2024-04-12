@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: staff-management-master-service
+  jmx:
+    default-domain: ${spring.application.name}
+  main:
+    allow-bean-definition-overriding: true
+
+    logging:
+      level:
+        org:
+          springframework: DEBUG
+server:
+  port: 8090
+  servlet:
+    context-path: /${spring.application.name}
+
+application:
+  eureka-service:
+    port: 8080
+
+#regular expression that verify mobile number is of 10 digit
+number:
+  verification:
+    regular:
+      expression: ([0-9+]+)
+
+  #mail property
+  mail:
+    host=smtp.gmail.com
+    port=587
+    username=surajsharma955571@gmail.com
+    password=civm nlob nlfu klee
+    properties.mail.smtp.auth=true
+    properties.mail.smtp.starttls.enable=true

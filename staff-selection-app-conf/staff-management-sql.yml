@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/multitenancy
+    username: aspire
+    password: aspire@12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQLDialect
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    show-sql: true
+    properties:
+      hibernate: 'show_sql:true format_sql:true,time_zone:UTC'
+    #  database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    logging:
+      level:
+        org:
+          hibernate: null
+          type: DEBUG
+    # autoconfigure:
+    # exclude:
+    #   - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+hibernate:
+  dialect:
+    storage_engine: innodb
